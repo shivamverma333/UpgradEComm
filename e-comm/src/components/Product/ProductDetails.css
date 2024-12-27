@@ -1,0 +1,27 @@
+.product-image{
+    height:100%;
+    width:100%;
+}
+
+.img-container{
+    height: 300px;
+    width: 300px;
+}
+
+
+
+.heading{
+    display: flex;
+    flex-direction: row;
+    width:fit-content;
+}
+
+.description-box{
+    margin-top:10px;
+    text-align: justify;
+    width:25rem;
+}
+
+.form{
+    margin-top: "20px";
+}

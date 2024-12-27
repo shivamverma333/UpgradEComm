@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import './CardStructure.css'
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CardStructure = ({ result }) => {
 
@@ -35,7 +36,8 @@ const CardStructure = ({ result }) => {
 
         </CardContent>
         <CardActions>
-          <Button size="small" variant="contained" sx={{ bgcolor: "#3f51b5" }}>Buy</Button>
+          <Link to={`/products/product-detail/${result.id}`}><Button size="small" variant="contained"
+           sx={{ bgcolor: "#3f51b5" }}>Buy</Button></Link>
         </CardActions>
       </Card>
     </div>

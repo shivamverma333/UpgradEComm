@@ -10,8 +10,12 @@ import {
   import { Link } from "react-router-dom";
   import "./Navigation.css";
   import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useAuth } from "../../utils/auth";
   
   const Navigation = () => {
+
+    const auth = useAuth();
+
     const button = {
       bgcolor: "#FF007F",
     };
@@ -26,6 +30,10 @@ import {
         borderBottom: "none",
       },
     };
+
+    const handleLogout=()=>{
+      auth.logout();
+    }
   
     return (
       <div>
@@ -53,9 +61,12 @@ import {
             <Stack spacing={2} direction={"row"}>
               <Button color="inherit">Home</Button>
               <Button color="inherit">Add Product</Button>
-              <Link to='/login'><Button variant="contained" sx={button}>
+              {!auth.user ? <Link to='/login'><Button variant="contained" sx={button}>
                 Login
-              </Button></Link>
+              </Button></Link> : <Button variant="contained" sx={button} onClick={handleLogout}>
+                Logout
+              </Button>}
+              
             </Stack>
           </Toolbar>
         </AppBar>

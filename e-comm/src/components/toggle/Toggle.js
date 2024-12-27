@@ -5,7 +5,7 @@ import './Toggle.css'
 
 const Toggle = (props) => {
 
-    const [category, setCategory ] = useState('all');
+    const [category, setCategory ] = useState(props.filter);
 
     const handleCategory=(e)=>{
         setCategory(e.target.value);
@@ -13,8 +13,6 @@ const Toggle = (props) => {
     }
 
     const handleClick=(e)=>{
-        console.log("click me!!");
-        console.log(e.target.value);
         props.setFilter(e.target.value);
     }
 

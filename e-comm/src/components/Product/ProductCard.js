@@ -33,7 +33,6 @@ const ProductCard = () => {
   },[filter]);
 
   const filterCategory = () => {
-    console.log("inside filter category", filter)
     if (filter === 'APPAREL') {
       setDisplayProducts(products.filter((product) =>
         APPAREL.indexOf(product.category) >= 0));
@@ -49,10 +48,9 @@ const ProductCard = () => {
 
   }
 
-
   return (
     <>
-      <Toggle setFilter={setFilter} />
+      <Toggle setFilter={setFilter} filter={filter} />
       <Container maxWidth="lg">
         <Grid container spacing={5} style={{ marginTop: "20px" }} sx={{ justifyContent: 'center', alignContent: 'center' }}>
           {displayProducts.map((result, index) => {
